@@ -6,6 +6,7 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/live";
 import { urlFor } from "@/sanity/image";
 
+// What this query does now is to first look for a value for format and set that to the eventType key, if it doesn’t find a value for it, it will fallback on the value for eventType.
 const EVENT_QUERY = defineQuery(`*[
     _type == "event" &&
     slug.current == $slug
@@ -13,6 +14,7 @@ const EVENT_QUERY = defineQuery(`*[
   ...,
   "date": coalesce(date, now()),
   "doorsOpen": coalesce(doorsOpen, 0),
+  "eventType": coalesce(format, eventType),
   headline->,
   venue->
 }`);
