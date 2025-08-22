@@ -6,7 +6,6 @@ import Image from "next/image";
 import { sanityFetch } from "@/sanity/live";
 import { urlFor } from "@/sanity/image";
 
-// What this query does now is to first look for a value for format and set that to the eventType key, if it doesn’t find a value for it, it will fallback on the value for eventType.
 const EVENT_QUERY = defineQuery(`*[
     _type == "event" &&
     slug.current == $slug
@@ -14,7 +13,6 @@ const EVENT_QUERY = defineQuery(`*[
   ...,
   "date": coalesce(date, now()),
   "doorsOpen": coalesce(doorsOpen, 0),
-  "eventType": coalesce(format, eventType),
   headline->,
   venue->
 }`);
@@ -36,7 +34,7 @@ export default async function EventPage({
     date,
     headline,
     details,
-    eventType,
+    format,
     doorsOpen,
     venue,
     tickets,
@@ -77,9 +75,9 @@ export default async function EventPage({
         />
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-4">
-            {eventType ? (
+            {format ? (
               <div className="inline-block rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-1 text-sm text-gray-700 dark:text-gray-300 capitalize">
-                {eventType.replace("-", " ")}
+                {format.replace("-", " ")}
               </div>
             ) : null}
             {name ? (
