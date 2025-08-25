@@ -25,7 +25,7 @@
     "@sanity/vision": "^4.5.0",
     "react": "^19.1",
     "react-dom": "^19.1",
-    "sanity": "^4.5.0",
+    "sanity": "https://pkg.pr.new/sanity-io/sanity@10454",
     "sanity-plugin-documents-pane": "^2.4.1",
     "styled-components": "^6.1.18"
   },
