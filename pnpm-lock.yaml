@@ -10,6 +10,9 @@ importers:
 
   apps/studio:
     dependencies:
+      '@sanity/client':
+        specifier: ^7.9.0
+        version: 7.9.0(debug@4.4.1)
       '@sanity/icons':
         specifier: ^3.7.4
         version: 3.7.4(react@19.1.0)
@@ -35,9 +38,15 @@ importers:
         specifier: ^6.1.18
         version: 6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
+      '@sanity/blueprints':
+        specifier: 0.2.0
+        version: 0.2.0
       '@sanity/eslint-config-studio':
         specifier: ^5.0.2
         version: 5.0.2(eslint@9.33.0(jiti@2.5.1))(typescript@5.9.2)
+      '@sanity/functions':
+        specifier: 1.0.3
+        version: 1.0.3
       '@types/react':
         specifier: ^19.1
         version: 19.1.10
@@ -1739,6 +1748,10 @@ packages:
   '@sanity/bifur-client@0.4.1':
     resolution: {integrity: sha512-mHM8WR7pujbIw2qxuV0lzinS1izOoyLza/ejWV6quITTLpBhUoPIQGPER3Ar0SON5JV0VEEqkJGa1kjiYYgx2w==}
 
+  '@sanity/blueprints@0.2.0':
+    resolution: {integrity: sha512-dzwMfbBjluyid/EYOk5Xxjsn8aKfttjNVPANCk6y/sFH6lL/zAZQldvn0aQZN5B7FzGKq5PnL79dLhXqrylylg==}
+    engines: {node: '>=20'}
+
   '@sanity/cli@4.5.0':
     resolution: {integrity: sha512-b3PkHSoS3j81UjWApIfVSSKVSYHL+mnbfbBcfS35G1vWH979Ey0Vrmy6lDjL7gSuUiTzjWDjC14mVlIw4gLLbg==}
     engines: {node: '>=20.19 <22 || >=22.12'}
@@ -1800,6 +1813,10 @@ packages:
   '@sanity/export@4.0.1':
     resolution: {integrity: sha512-fQYd26ooDOKsiza6ubdPla8x7sKmQGD8U1wsFEQ3RGJByQkFq1C7LbylG+4m42BMERbftkonv26XLgfN8RXZQQ==}
     engines: {node: '>=20.19 <22 || >=22.12'}
+
+  '@sanity/functions@1.0.3':
+    resolution: {integrity: sha512-aEDxl52oAmxinHIMwnUhy4sOGzuMH0NY+52GkEpLoK4Nw+2k45lvYIF7tqc8HxwYF9fKVyYaZ4PXOJpgeMn9/g==}
+    engines: {node: '>=20'}
 
   '@sanity/generate-help-url@3.0.0':
     resolution: {integrity: sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==}
@@ -7827,6 +7844,8 @@ snapshots:
       nanoid: 3.3.11
       rxjs: 7.8.2
 
+  '@sanity/blueprints@0.2.0': {}
+
   '@sanity/cli@4.5.0(@types/node@20.19.11)(@types/react@19.1.10)(lightningcss@1.30.1)(react@19.1.0)(typescript@5.9.2)(yaml@2.8.1)':
     dependencies:
       '@babel/traverse': 7.28.3
@@ -7970,6 +7989,8 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
       - supports-color
+
+  '@sanity/functions@1.0.3': {}
 
   '@sanity/generate-help-url@3.0.0': {}
 
@@ -8116,7 +8137,7 @@ snapshots:
     dependencies:
       '@sanity/client': 7.9.0(debug@4.4.1)
       '@sanity/comlink': 3.0.9
-      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))
+      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0(debug@4.4.1))(@sanity/types@4.5.0(@types/react@19.1.10))
       dequal: 2.0.3
       next: 15.5.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react: 19.1.0
@@ -8130,14 +8151,6 @@ snapshots:
       '@sanity/client': 7.9.0(debug@4.4.1)
       '@sanity/comlink': 3.0.9
       '@sanity/visual-editing-types': 1.1.5(@sanity/client@7.9.0(debug@4.4.1))(@sanity/types@4.5.0(@types/react@19.1.10))
-    transitivePeerDependencies:
-      - '@sanity/types'
-
-  '@sanity/presentation-comlink@1.0.28(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))':
-    dependencies:
-      '@sanity/client': 7.9.0(debug@4.4.1)
-      '@sanity/comlink': 3.0.9
-      '@sanity/visual-editing-types': 1.1.5(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))
     transitivePeerDependencies:
       - '@sanity/types'
 
@@ -8407,7 +8420,7 @@ snapshots:
   '@sanity/visual-editing-csm@2.0.23(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))(typescript@5.9.2)':
     dependencies:
       '@sanity/client': 7.9.0(debug@4.4.1)
-      '@sanity/visual-editing-types': 1.1.5(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))
+      '@sanity/visual-editing-types': 1.1.5(@sanity/client@7.9.0(debug@4.4.1))(@sanity/types@4.5.0(@types/react@19.1.10))
       valibot: 1.1.0(typescript@5.9.2)
     transitivePeerDependencies:
       - '@sanity/types'
@@ -8419,19 +8432,13 @@ snapshots:
     optionalDependencies:
       '@sanity/types': 4.5.0(@types/react@19.1.10)(debug@4.4.1)
 
-  '@sanity/visual-editing-types@1.1.5(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))':
-    dependencies:
-      '@sanity/client': 7.9.0(debug@4.4.1)
-    optionalDependencies:
-      '@sanity/types': 4.5.0(@types/react@19.1.10)(debug@4.4.1)
-
   '@sanity/visual-editing@3.0.3(@emotion/is-prop-valid@1.2.2)(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))(next@15.5.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react-is@19.1.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.2)':
     dependencies:
       '@sanity/comlink': 3.0.9
       '@sanity/icons': 3.7.4(react@19.1.0)
       '@sanity/insert-menu': 2.0.1(@emotion/is-prop-valid@1.2.2)(@sanity/types@4.5.0(@types/react@19.1.10))(react-dom@19.1.0(react@19.1.0))(react-is@19.1.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@sanity/mutate': 0.11.0-canary.4(xstate@5.20.2)
-      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))
+      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0(debug@4.4.1))(@sanity/types@4.5.0(@types/react@19.1.10))
       '@sanity/preview-url-secret': 2.1.14(@sanity/client@7.9.0(debug@4.4.1))
       '@sanity/ui': 3.0.7(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.1)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@sanity/visual-editing-csm': 2.0.23(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))(typescript@5.9.2)
@@ -11961,7 +11968,7 @@ snapshots:
       '@sanity/message-protocol': 0.17.2
       '@sanity/migrate': 4.5.0(@types/react@19.1.10)
       '@sanity/mutator': 4.5.0(@types/react@19.1.10)
-      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0)(@sanity/types@4.5.0(@types/react@19.1.10))
+      '@sanity/presentation-comlink': 1.0.28(@sanity/client@7.9.0(debug@4.4.1))(@sanity/types@4.5.0(@types/react@19.1.10))
       '@sanity/preview-url-secret': 2.1.14(@sanity/client@7.9.0(debug@4.4.1))
       '@sanity/schema': 4.5.0(@types/react@19.1.10)(debug@4.4.1)
       '@sanity/sdk': 2.1.2(@types/react@19.1.10)(debug@4.4.1)(immer@10.1.1)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
