@@ -225,7 +225,7 @@ export type AllSanitySchemaTypes = Event | Artist | Venue | SanityImagePaletteSw
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ../web/src/app/events/[slug]/page.tsx
 // Variable: EVENT_QUERY
-// Query: *[    _type == "event" &&    slug.current == $slug  ][0]{  ...,  "date": coalesce(date, now()),  "doorsOpen": coalesce(doorsOpen, 0),  "eventType": coalesce(format, eventType),  headline->,  venue->}
+// Query: *[    _type == "event" &&    slug.current == $slug  ][0]{  ...,  "date": coalesce(date, now()),  "doorsOpen": coalesce(doorsOpen, 0),  headline->,  venue->}
 export type EVENT_QUERYResult = {
   _id: string;
   _type: "event";
@@ -234,7 +234,7 @@ export type EVENT_QUERYResult = {
   _rev: string;
   name?: string;
   slug?: Slug;
-  eventType: "in-person" | "virtual" | null;
+  eventType?: "in-person" | "virtual";
   format?: "in-person" | "virtual";
   date: string;
   doorsOpen: number | 0;
@@ -316,7 +316,7 @@ export type EVENTS_QUERYResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[\n    _type == \"event\" &&\n    slug.current == $slug\n  ][0]{\n  ...,\n  \"date\": coalesce(date, now()),\n  \"doorsOpen\": coalesce(doorsOpen, 0),\n  \"eventType\": coalesce(format, eventType),\n  headline->,\n  venue->\n}": EVENT_QUERYResult;
+    "*[\n    _type == \"event\" &&\n    slug.current == $slug\n  ][0]{\n  ...,\n  \"date\": coalesce(date, now()),\n  \"doorsOpen\": coalesce(doorsOpen, 0),\n  headline->,\n  venue->\n}": EVENT_QUERYResult;
     "*[\n  _type == \"event\"\n  && defined(slug.current)\n  && date > now()\n]|order(date asc){_id, name, slug, date}": EVENTS_QUERYResult;
   }
 }
